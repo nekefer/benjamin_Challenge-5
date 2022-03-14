@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: "Mattone";
+  src: url('/assets/Mattone/web/Mattone-150.woff')format('woff'),
+  url('/assets/Mattone/web/Mattone-150.woff2'), format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 *{
     padding: 0;
     margin: 0;
@@ -14,31 +22,128 @@
   grid-row-gap: 0px;
 }
 
-.div1 {
+.nav {
   grid-area: 1 / 1 / 2 / 12;
-  background-color: rebeccapurple;
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.div2 {
-  grid-area: 2 / 1 / 8 / 3;
-  background-color: aliceblue;
+.nav .title{
+  position: relative;
+  width: 90%;
+  font-family: "Mattone", sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+ text-align: center;
 }
-.div3 {
-  grid-area: 8 / 1 / 9 / 8;
-  background-color: aqua;
+.menu{
+  position: relative;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.div4 {
+.menu .bar{
+  position: relative;
+  background-color: #000;
+  width: 40px;
+  height: 2px;
+  margin-top: 10px;
+}
+.main {
   grid-area: 2 / 3 / 8 / 8;
-  background-color: black;
+  border-right: 2px solid #000;
+  background-image: url('assets/love-dress-white-04.jpeg');
+  background-size: cover;
+  background-position: center;
 }
-.div5 {
-  grid-area: 2 / 8 / 8 / 12;
-  background-color: blue;
+.side {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: 120px;
+  grid-area: 2 / 1 / 8 / 3;
+  border-right: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.div6 {
+.side .reverse{
+  position: relative;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+.footer-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-area: 8 / 1 / 9 / 8;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+}
+.footer-left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   grid-area: 8 / 8 / 9 / 12;
-  background-color: brown;
+  border-top: 2px solid #000;
 }
-.div7 {
+.footer-left .round{
+  width: 25px;
+  height: 25px;
+  background-color: #000;
+  border-radius: 50%;
+}
+.right {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: 2 / 8 / 8 / 12;
+}
+.svg{
+  position: relative;
+  top: -11px;
+  width: 65%;
+}
+.preorder{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.preorder .arrow{
+  position: relative;
+  top: 50%;
+  height: 1px;
+  width: 100px;
+  margin-left: 15px;
+  background-color: #000;
+}
+.preorder .arrow::before,.preorder .arrow::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 1px;
+  background-color: #000;
+}
+.preorder .arrow::after{
+  transform: translateX(93px) rotate(45deg);
+  transform-origin: right;
+}
+.preorder .arrow::before{
+  transform: translateX(93px) rotate(-45deg);
+  transform-origin: right;
+}
+.right-up {
+  background-image: url('assets/love-dress-white-02.jpeg');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #000;
   grid-area: 3 / 7 / 5 / 12;
-  background-color: cadetblue;
 }

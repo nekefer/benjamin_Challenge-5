@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @font-face {
   font-family: "Mattone";
   src: url('/assets/Mattone/web/Mattone-150.woff')format('woff'),
@@ -10,11 +11,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins',sans-serif;
+}
+.side-responsive, .footer-responsive{
+  display: none;
+}
+body{
+  background-color: #e9e8e2;;
 }
 .parent {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
@@ -37,6 +44,8 @@
   letter-spacing: 1px;
   font-size: 1.5em;
  text-align: center;
+ font-weight: 700;
+ text-transform: uppercase;
 }
 .menu{
   position: relative;
@@ -45,26 +54,25 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-right: 10px;
 }
 .menu .bar{
   position: relative;
   background-color: #000;
-  width: 40px;
-  height: 2px;
+  width: 50px;
+  height: 3px;
   margin-top: 10px;
 }
 .main {
   grid-area: 2 / 3 / 8 / 8;
   border-right: 2px solid #000;
+  border-left: 2px solid #000;
   background-image: url('assets/love-dress-white-04.jpeg');
   background-size: cover;
   background-position: center top;
 }
 .side {
-  font-family: 'Dancing Script', cursive, sans-serif;
-  font-size: 120px;
   grid-area: 2 / 1 / 8 / 3;
-  border-right: 2px solid #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,6 +80,9 @@
 .side .reverse{
   position: relative;
   transform: rotate(-90deg);
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: 10.5vw;
+  font-weight: 700;
   white-space: nowrap;
 }
 .footer-right {
@@ -81,6 +92,7 @@
   grid-area: 8 / 1 / 9 / 8;
   border-top: 2px solid #000;
   border-right: 2px solid #000;
+  font-size: 2vw;
 }
 .footer-left {
   display: flex;
@@ -88,6 +100,8 @@
   align-items: center;
   grid-area: 8 / 8 / 9 / 12;
   border-top: 2px solid #000;
+  font-size: 2vw;
+
 }
 .footer-left .round{
   width: 25px;
@@ -115,6 +129,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 20px;
 
 }
 
@@ -122,8 +137,8 @@
   position: relative;
   top: 50%;
   height: 1px;
-  width: 100px;
-  margin-left: 15px;
+  width: 75px;
+  margin-left: 1vw;
   background-color: #000;
 }
 .preorder .arrow::before,.preorder .arrow::after {
@@ -134,11 +149,11 @@
   background-color: #000;
 }
 .preorder .arrow::after{
-  transform: translateX(93px) rotate(45deg);
+  transform: translateX(68px) rotate(45deg);
   transform-origin: right;
 }
 .preorder .arrow::before{
-  transform: translateX(93px) rotate(-45deg);
+  transform: translateX(68px) rotate(-45deg);
   transform-origin: right;
 }
 .right-up {
@@ -146,5 +161,83 @@
   background-size: cover;
   background-position: center;
   border: 2px solid #000;
+  border-right: none;
   grid-area: 3 / 7 / 5 / 12;
+}
+@media screen and (max-width:975px) {
+  .preorder{
+    font-size: 2vw;
+  }
+  @media screen and (max-width :890px) {
+    .svg{
+      top: -5px;
+      width: 75%;
+    }
+    .preorder .arrow{
+      width: 45px;
+    }
+    .preorder .arrow::before,.preorder .arrow::after {
+      width: 5px;
+    }
+    .preorder .arrow::after{
+      transform: translateX(40px) rotate(45deg);
+    }
+    .preorder .arrow::before{
+      transform: translateX(40px) rotate(-45deg);
+    }
+  }
+  @media screen and (max-width:600px) {
+    .right-up, .right,.footer-left,.footer-right{
+      display: none;
+    }
+    .main{
+      border: none;
+    }
+    .side{
+      display: block;
+    }
+    .side .reverse{
+      transform: none;
+    }
+    .side { 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      grid-area: 2 / 1 / 3 / 13; 
+    }
+    .side-responsive{
+      display: block;
+      font-size: 4vw;
+      font-weight: 200;
+      text-decoration: underline;
+    }
+    .main { 
+      margin: 10px;
+      grid-area: 3 / 1 / 8 / 13;
+     }
+    .footer-responsive {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      grid-area: 8 / 1 / 9 / 13; 
+    }
+    .footer-responsive-left{
+      padding-left: 10px;
+      font-size: 4vw;
+      font-weight: 400;
+    }
+    .footer-responsive-right{
+      position: relative;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #000;
+      margin: 0 10px;
+      font-size: 2em;
+    }
+  }
+
 }

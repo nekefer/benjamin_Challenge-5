@@ -81,8 +81,8 @@ body{
   position: relative;
   transform: rotate(-90deg);
   font-family: 'Dancing Script', cursive, sans-serif;
-  font-size: 10.5vw;
-  font-weight: 700;
+  font-size: 8.5vw;
+  font-weight: 600;
   white-space: nowrap;
 }
 .footer-right {
